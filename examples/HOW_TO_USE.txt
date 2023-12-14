@@ -1,0 +1,26 @@
+user$ head -n 5 nmea.txt 
+$GPGGA,52746.75,,,,,0,0,999.9,,M,,M,,*66,1.70245E+12
+$GPGGA,52747.49,,,,,0,0,999.9,,M,,M,,*68,1.70245E+12
+$GPGGA,52747.75,3532.791308,N,13940.34087,E,1,10,1.9,9.1,M,39.2,M,,*62,1.70245E+12
+$GPGGA,52748.75,3532.785573,N,13940.3386,E,1,12,0.8,35.2,M,39.2,M,,*5A,1.70245E+12
+$GPGGA,52749.75,3532.788866,N,13940.33541,E,1,12,0.8,20.6,M,39.2,M,,*53,1.70245E+12
+$ python3 extract_coordinates.py 
+$ head -n 5 coordinates.csv 
+緯度,経度,標高
+35.5465218,139.67234783333333,39.2
+35.54642621666667,139.67231,39.2
+35.5464811,139.67225683333334,39.2
+35.546487766666665,139.672257,39.2
+$ python3 coordinates_to_kml_converter.py 
+$ head -n 10 output.kml 
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <Point id="2">
+                <coordinates>139.67234783333333,35.5465218,39.2</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="5">
+            <Point id="4">
+$ 
